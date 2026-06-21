@@ -1,88 +1,144 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
+    <meta charset="UTF-8" />
     <title>الصفحة الرئيسية</title>
+
     <style>
-        article {
-            background-color:#FFFFFF;
-            text-align:center;
-            -webkit-column-count:3;
-            -webkit-column-gap:40px;
-            -webkit-column-rule:2px solid black;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Cairo", sans-serif;
         }
-        div {
-          border:2px solid blue;
+
+        body {
+            background: #f1f5f9;
+            padding: 40px 20px;
         }
-        img {
-            width:250px;
-            height:150px;
-            padding:20px;
+
+        /* Grid Layout */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
-        button {
-        background-color:blue;
-    color:white;
-    padding: 16px 32px;
-    margin:6px 2px;
-    cursor:pointer;
-    text-decoration:none;
+
+        /* Card Style */
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #475569;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        /* Button */
+        .card button {
+            background: #2563eb;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .card button:hover {
+            background: #1d4ed8;
         }
     </style>
 </head>
+
 <body>
-    <article>
-   <div id="div1">
-       <a href="10x19.5m-1.jpg">
-       <img src="10x19.5m-1.jpg" /></a>
-       <hr />
-       <h3>$45000.99</h3>
-       <p>مخطط عمارة سكنية طابقين</p>
-       <button onclick="alert('تمت عملية بنجاح')">Add</button>
-   </div>
-    <div id="div2">
-        <a href="مخططات-فلل-دورين-500متر.png">
-        <img src="مخططات-فلل-دورين-500متر.png" /> </a> 
-        <hr />
-       <h3>$50000.99</h3>
-       <p>مخطط فلل</p>
-         <button onclick="alert('تمت عملية بنجاح')" >Add</button>
-   </div>
-    <div id="div3">
-        <a href="57-3.jpg">
-        <img src="57-3.jpg"/></a>
-        <hr />
-       <h3>$149000.99</h3>
-       <p>دراسة تصميم مستشفى</p>
-         <button onclick="alert('تمت عملية بنجاح')" >Add</button>
-   </div>
-        </article>
-    <br />
-    <br />
-    <article>
-   <div id="div4">
-       <a href="57-1.jpg">
-       <img src="57-1.jpg"/></a>
-       <hr />
-       <h3>$20000.99</h3>
-       <p>دراسة تصميم محطة بنزين</p>
-       <button onclick="alert('تمت عملية بنجاح')">Add</button>
-   </div>
-    <div id="div5">
-        <a href="w.jpg">
-        <img src="w.jpg"/></a>
-        <hr />
-       <h3>$5000.99</h3>
-       <p>عمارة الداخلية</p>
-         <button onclick="alert('تمت عملية بنجاح')" >Add</button>
-   </div>
-    <div id="div6">
-        <a href="FB_IMG_16885998365642213.jpg">
-        <img src="FB_IMG_16885998365642213.jpg" /></a>
-        <hr />
-       <h3>$2000.99</h3>
-       <p>مخطط الدور الارضي</p>
-         <button onclick="alert('تمت عملية بنجاح')">Add</button>
-   </div>
-        </article>
-    
+
+    <!-- First Row -->
+    <section class="products">
+        <div class="card">
+            <a href="10x19.5m-1.jpg">
+                <img src="10x19.5m-1.jpg" alt="مخطط عمارة" />
+            </a>
+            <h3>$45000.99</h3>
+            <p>مخطط عمارة سكنية طابقين</p>
+            <button onclick="alert('تمت العملية بنجاح')">إضافة</button>
+        </div>
+
+        <div class="card">
+            <a href="مخططات-فلل-دورين-500متر.png">
+                <img src="مخططات-فلل-دورين-500متر.png" alt="مخطط فلل" />
+            </a>
+            <h3>$50000.99</h3>
+            <p>مخطط فلل</p>
+            <button onclick="alert('تمت العملية بنجاح')">إضافة</button>
+        </div>
+
+        <div class="card">
+            <a href="57-3.jpg">
+                <img src="57-3.jpg" alt="تصميم مستشفى" />
+            </a>
+            <h3>$149000.99</h3>
+            <p>دراسة تصميم مستشفى</p>
+            <button onclick="alert('تمت العملية بنجاح')">إضافة</button>
+        </div>
+    </section>
+
+    <!-- Second Row -->
+    <section class="products">
+        <div class="card">
+            <a href="57-1.jpg">
+                <img src="57-1.jpg" alt="محطة بنزين" />
+            </a>
+            <h3>$20000.99</h3>
+            <p>دراسة تصميم محطة بنزين</p>
+            <button onclick="alert('تمت العملية بنجاح')">إضافة</button>
+        </div>
+
+        <div class="card">
+            <a href="w.jpg">
+                <img src="w.jpg" alt="عمارة داخلية" />
+            </a>
+            <h3>$5000.99</h3>
+            <p>عمارة الداخلية</p>
+            <button onclick="alert('تمت العملية بنجاح')">إضافة</button>
+        </div>
+
+        <div class="card">
+            <a href="FB_IMG_16885998365642213.jpg">
+                <img src="FB_IMG_16885998365642213.jpg" alt="مخطط الدور الأرضي" />
+            </a>
+            <h3>$2000.99</h3>
+            <p>مخطط الدور الأرضي</p>
+            <button onclick="alert('تمت العملية بنجاح')">إضافة</button>
+        </div>
+    </section>
+
 </body>
 </html>
